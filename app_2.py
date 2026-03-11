@@ -30,13 +30,10 @@ def revers(word):
     else:
         return "Uncorrect data."
 
-@app.route('/user/<name>/<age>')
+@app.route('/user/<name>/<int:age>')
 def user_info(name, age):
-    if len(name) > 0 and age.isdigit(): 
-        if int(age) > 0:
-            return f"Hello, {name}. You are {age} years old."
-        else:
-            return "Uncorrect data."
+    if len(name) > 0 and age > 0: 
+        return f"Hello, {name}. You are {age} years old."
     else:
         return "Uncorrect data."
 
@@ -51,3 +48,4 @@ def is_number(s):
 if __name__ == "__main__":
 
     app.run(debug=True)
+
