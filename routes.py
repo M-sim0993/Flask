@@ -28,7 +28,7 @@ def info():
 
 @app.route('/calc/<s1>/<s2>')
 def calc(s1, s2):
-    if is_number(s1) & is_number(s2):
+    if is_number(s1) and is_number(s2):
         return f"The sum of {s1} and {s2} is {int(s1) + int(s2)}."
     else:
         return "Uncorrect data."
@@ -42,7 +42,7 @@ def revers(word):
 
 @app.route('/user/<name>/<age>')
 def user_info(name, age):
-    if len(name) > 0 & age.isdigit(): 
+    if len(name) > 0 and age.isdigit(): 
         if int(age) > 0:
             return f"Hello, {name}. You are {age} years old."
         else:
